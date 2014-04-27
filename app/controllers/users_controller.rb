@@ -19,12 +19,18 @@ class UsersController < ApplicationController
 
   def show
     # show the user's details (just their username)
-    @user = User.find(params[:id])
+    if current_user.nil?
+      # let them log in
+      redirect_to new_session_url
+      return
+    end
+
+    @user = current_user
     render :show
   end
 
   protected
   def user_params
-    params.require(:user).permit(:username, :password)
+    self.params.require(:user).permit(:username, :password)
   end
 end
