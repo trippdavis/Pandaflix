@@ -1,10 +1,13 @@
+require 'digest/sha2'
+
 class UsersController < ApplicationController
   def create
     # sign up the user
     @user = User.new(user_params)
     if @user.save
       # redirect them to the new user's show page
-      redirect_to user_url(@user)
+      log_in!(@user)
+      redirect_to user_url
     else
       # input didn't pass validation; re-render sign up form.
       render :new
@@ -31,6 +34,10 @@ class UsersController < ApplicationController
 
   protected
   def user_params
-    self.params.require(:user).permit(:username, :password)
+    # self.params.require(:user).permit(:username, :password)
+    password_digest = Digest::SHA2.hexdigest(params[:user][:password])
+
+    { username: params[:user][:username],
+      password_digest: password_digest }
   end
 end
