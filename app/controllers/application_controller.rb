@@ -7,15 +7,18 @@ class ApplicationController < ActionController::Base
 
   def current_user
     # fetches the user we've logged in as
-    return nil if self.session[:user_id].nil?
-    User.find(self.session[:user_id])
+    return nil if self.session[:session_token].nil?
+    User.find_by(session_token: self.session[:session_token])
   end
 
   def log_in!(user)
-    self.session[:user_id] = user.id
+    # force other clients to log out by regenerating token
+    user.reset_session_token!
+    # log this client in
+    self.session[:session_token] = user.session_token
   end
 
   def log_out!
-    self.session[:user_id] = nil
+    self.session[:session_token] = nil
   end
 end
