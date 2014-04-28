@@ -7,6 +7,11 @@
 <form action="/user/counter" method="POST">
   <input type="hidden" name="_method" value="PUT">
 
+  <input
+    type="hidden"
+    name="_my_csrf_token"
+    value="<%= my_csrf_token %>">
+
   <label for="user_counter">New Counter Value</label>
   <input type="number" name="user[counter]" id="user_counter">
 
