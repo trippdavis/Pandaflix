@@ -12,6 +12,12 @@
   ([DIFF](https://github.com/appacademy-demos/AuthVideoDemo/compare/03-password-pseudo-attribute...04-session-token))
 * [05-bcrypt](https://vimeo.com/groups/appacademy/videos/93104232)
   ([DIFF](https://github.com/appacademy-demos/AuthVideoDemo/compare/04-session-token...05-bcrypt))
+* [06-csrf-attack](https://vimeo.com/groups/appacademy/videos/93114286)
+  ([DIFF](https://github.com/appacademy-demos/AuthVideoDemo/compare/05-bcrypt...06-csrf-attack))
+* [07-implement-csrf-protection](https://vimeo.com/groups/appacademy/videos/93114288)
+  ([DIFF](https://github.com/appacademy-demos/AuthVideoDemo/compare/06-csrf-attack...07-implement-csrf-protection))
+* [08-rails-csrf-methods](https://vimeo.com/groups/appacademy/videos/93114287)
+  ([DIFF](https://github.com/appacademy-demos/AuthVideoDemo/compare/07-implement-csrf-protection...08-rails-csrf-methods))
 
 ## TODO
 
