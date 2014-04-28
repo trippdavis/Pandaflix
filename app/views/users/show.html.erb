@@ -2,6 +2,17 @@
 
 <p>Hello, <%= @user.username %></p>
 
+<p>Current Counter Value: <%= @user.counter %></p>
+
+<form action="/user/counter" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+
+  <label for="user_counter">New Counter Value</label>
+  <input type="number" name="user[counter]" id="user_counter">
+
+  <input type="submit" value="Update Counter!">
+</form>
+
 <form action="/session" method="POST">
   <input type="hidden" name="_method" value="DELETE">
 
