@@ -1,5 +1,3 @@
-require 'digest/sha2'
-
 class User < ActiveRecord::Base
   attr_reader :password
 
@@ -15,13 +13,16 @@ class User < ActiveRecord::Base
     return nil if user.nil?
 
     # check user's password
-    password_digest = Digest::SHA2.hexdigest(password)
-    user.password_digest == password_digest ? user : nil
+    user.password_digest.is_password?(password) ? user : nil
   end
 
   def password=(password)
     @password = password
-    self.password_digest = Digest::SHA2.hexdigest(password)
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def password_digest
+    BCrypt::Password.new(super)
   end
 
   def ensure_session_token

@@ -7,5 +7,4 @@
 
 ## TODO
 
-* BCrypt
 * CSRF
