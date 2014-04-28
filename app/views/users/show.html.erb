@@ -9,8 +9,8 @@
 
   <input
     type="hidden"
-    name="_my_csrf_token"
-    value="<%= my_csrf_token %>">
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
 
   <label for="user_counter">New Counter Value</label>
   <input type="number" name="user[counter]" id="user_counter">
@@ -20,6 +20,10 @@
 
 <form action="/session" method="POST">
   <input type="hidden" name="_method" value="DELETE">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
 
   <input type="submit" value="Logout!">
 </form>
