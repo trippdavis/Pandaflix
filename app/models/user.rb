@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
 
-    # no user with given username    
+    # no user with given username
     return nil if user.nil?
 
     # check user's password
