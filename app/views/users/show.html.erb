@@ -12,8 +12,13 @@
     name="authenticity_token"
     value="<%= form_authenticity_token %>">
 
-  <label for="user_counter">New Counter Value</label>
-  <input type="number" name="user[counter]" id="user_counter">
+  <div class="form-group">
+    <label for="user_counter">New Counter Value</label>
+    <input
+      type="number"
+      name="user[counter]"
+      id="user_counter">
+  </div>
 
   <input type="submit" value="Update Counter!">
 </form>
