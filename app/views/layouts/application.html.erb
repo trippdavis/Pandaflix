@@ -19,17 +19,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
     </div>
 
     <div class="collapse navbar-collapse"
       id="pandaflix-navbar-collapse">
       <ul class="nav nav-pills">
-        <li><a href="<%= new_session_url %>">Log In</a></li>
-        <li><a href="<%= new_user_url %>">Sign Up</a></li>
-        <% if current_user %>
-          <li><a href="<%= user_url %>"><%= current_user.username %></a></li>
-        <% end %>
+        <li><a href="/static_pages/home">Home</a></li>
+        <li><a href="/static_pages/contact">Contact</a></li>
+        <li><a href="/static_pages/about">About</a></li>
       </ul>
     </div>
   </div>
